@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import cv2
 from sklearn.cluster import KMeans
 from sklearn.datasets import load_sample_image
 from sklearn.utils import shuffle
@@ -27,6 +28,7 @@ kmeans = KMeans(n_clusters=n_colors, random_state=0).fit(image_array_sample)
 # Get labels for all points
 labels = kmeans.predict(image_array)
 
+print cv2.__version__
 
 def recreate_image(codebook, labels, w, h, d):
     """Recreate the (compressed) image from the code book & labels"""
